@@ -1,4 +1,4 @@
-" TODO plugin
+" Todo plugin
 Plug 'sdeleon28/vim-todo'
 
 " NERDTree sidebar

@@ -22,6 +22,17 @@ set ts=4
 set et
 set sw=4
 
+" Show invisible characters
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+"Invisible character colors 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
 " Enable autoindent
 set autoindent
 set smartindent

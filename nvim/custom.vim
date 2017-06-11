@@ -56,8 +56,8 @@ set pastetoggle=<F3>
 " set laststatus=2
 " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" Mix Vim and system clipboards
-set clipboard=unnamed
+" Paste from clipboard
+nmap <leader>p :put+<CR>
 
 " Open vertical splits on the right
 set splitright

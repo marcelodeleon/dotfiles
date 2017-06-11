@@ -59,5 +59,12 @@ set pastetoggle=<F3>
 " Paste from clipboard
 nmap <leader>p :put+<CR>
 
+" Make it obvious where 120 characters is
+set textwidth=120
+" set formatoptions=cq
+set formatoptions=qrn1
+set wrapmargin=0
+set colorcolumn=+1
+
 " Open vertical splits on the right
 set splitright

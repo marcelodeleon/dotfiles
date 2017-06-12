@@ -20,3 +20,6 @@ let g:airline_powerline_fonts = 1
 
 " Simple Python Folding
 source ~/.dotfiles/nvim/plugins/fold.vim
+
+" Comment stuff out
+Plug 'tpope/vim-commentary'

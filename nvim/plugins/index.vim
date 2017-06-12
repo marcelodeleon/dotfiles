@@ -17,3 +17,6 @@ source ~/.dotfiles/nvim/plugins/ctrlp.vim
 Plug 'ryanoasis/vim-devicons'
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 let g:airline_powerline_fonts = 1
+
+" Simple Python Folding
+source ~/.dotfiles/nvim/plugins/fold.vim

@@ -23,3 +23,6 @@ source ~/.dotfiles/nvim/plugins/fold.vim
 
 " Comment stuff out
 Plug 'tpope/vim-commentary'
+
+" Async autocomplete plugin
+source ~/.dotfiles/nvim/plugins/deoplete.vim

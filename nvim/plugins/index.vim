@@ -26,3 +26,6 @@ Plug 'tpope/vim-commentary'
 
 " Async autocomplete plugin
 source ~/.dotfiles/nvim/plugins/deoplete.vim
+
+" Fix python indentation
+Plug 'vim-scripts/indentpython.vim'

@@ -4,6 +4,9 @@ Plug 'sdeleon28/vim-todo'
 " NERDTree sidebar
 source ~/.dotfiles/nvim/plugins/nerdtree.vim
 
+" Plugin for everything Python
+Plug 'klen/python-mode'
+
 " vim-airline and color scheme config
 source ~/.dotfiles/nvim/plugins/theme.vim
 

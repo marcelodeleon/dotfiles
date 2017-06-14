@@ -1,0 +1,52 @@
+[X] Install Plugin Manager
+[-] Select status bar
+	[X] vim airline
+	[ ] customize info
+	[ ] Add git info
+[-] Plugins:
+	[X] NERDTree
+	[X] Surround.vim
+	[X] Fuzzy finding (Ctrl-p)
+	[X] Folding
+	[X] TODO list
+	[X] Comments (Commentary)
+	[X] Autocomplete (deoplete.nvim)
+	[X] Autoindent
+	[ ] Emmet
+	[ ] unimpared.vim
+	[ ] Syntax highlight
+	[ ] Vimium?
+	[ ] Snippets
+	[ ] Fugitive.vim
+	[ ] Replace with register
+	[ ] Sort-motion
+	[ ] Titlecase
+	[ ] System Copy
+	[ ] ag.vim
+[ ] ctags
+	[ ] Investigate how they work
+	[ ] Implement for Python
+[ ] Custom Text-objects
+	[ ] Line
+	[ ] Indent
+	[ ] Entire File
+[ ] Python config
+	[ ] Flake8
+	[ ] Pytest
+	[ ] Tox
+	[ ] Linter
+[-] .vimrc
+	[X] Create basic one
+	[X] Separate file so it can be maintainable
+	[X] Create GIT repo for it
+	[ ] Auto source .vimrc (Vimcast #24)
+[-] Configurations
+	[X] Add relative line numbers
+	[X] Set tabs to be 4 spaces
+	[X] Copy paste from outside
+	[X] Show invisible chars (Vimcast #1)
+	[X] Stop highlight after search
+	[X] Split movement hotkeys
+	[X] Configure color scheme
+	[X] Add Glyphs (patched fonts) 
+	[ ] Remove autocomplete window automagically

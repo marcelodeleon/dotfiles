@@ -1,0 +1,35 @@
+# Git aliases
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+alias gci='git ci -m '
+alias gp='git push -u origin master'
+
+# ls with list options showing hidden files
+alias l='ls -la'
+# Navigate home
+alias wh='cd ~'
+
+# First project aliases
+alias wf='cd ~/sandbox/first'
+
+# Alias for compgraf sandbox
+alias wcs='cd ~/ucu/compgraf/sandbox'
+
+# Quick alias to edit bash configuration
+alias ebc='vim ~/.bashrc ~/.bash_profile ~/.bash_aliases'
+
+# Quick alias to edit vim TODO file
+alias vt='vim -O ~/.dotfiles/nvim/nvim_config.todo ~/.dotfiles/nvim/nvim_setup_log.md'
+
+# Remap rm to use trash, safety net against being very sleepy
+alias rm=trash
+
+# Remap vim and vi commands to always run neovim(nvim)
+alias vim=nvim
+alias vi=nvim

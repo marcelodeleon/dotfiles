@@ -1,0 +1,25 @@
+# Used to enable virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
+
+# Defines the path to virtualenvs
+export WORKON_HOME=~/Envs
+
+# Defines user config folder
+export XDG_CONFIG_HOME=~/.config
+
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+export PATH
+
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+# Add bash aliases.
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -74,17 +74,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
- 
-"Remove all trailing whitespace by pressing F5
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-"Remove all leading whitespace by pressing F4
-nnoremap <F4> :%s/^ \+//<CR>
-
-" Allows to copy from vim and paste in the system clipboard
-set clipboard=unnamed
-
-" Quick file mappings
-noremap <Leader>s :update<CR> 
-noremap <Leader>w :q<CR> 
-noremap <Leader>S :wa<CR> 
+" Quick save
+nnoremap <C-s> :w+<CR>

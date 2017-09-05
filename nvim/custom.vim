@@ -88,6 +88,3 @@ set clipboard=unnamed
 noremap <Leader>s :update<CR> 
 noremap <Leader>w :q<CR> 
 noremap <Leader>S :wa<CR> 
-
-" Quick newline
-nmap <CR> o<Esc>

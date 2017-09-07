@@ -7,8 +7,6 @@ source ~/.dotfiles/nvim/plugins/nerdtree.vim
 " vim-airline and color scheme config
 source ~/.dotfiles/nvim/plugins/theme.vim
 
-" Plugin for everything Python
-source ~/.dotfiles/nvim/plugins/python_mode.vim
 " Deals with surroundings
 Plug 'tpope/vim-surround'
 
@@ -20,12 +18,6 @@ Plug 'ryanoasis/vim-devicons'
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 let g:airline_powerline_fonts = 1
 
-" Simple Python Folding
-source ~/.dotfiles/nvim/plugins/fold.vim
-
-" I'm only using jedi-vim for go to def.
-source ~/.dotfiles/nvim/plugins/jedi-vim.vim
-
 " Comment stuff out
 Plug 'tpope/vim-commentary'
 
@@ -34,3 +26,6 @@ source ~/.dotfiles/nvim/plugins/deoplete.vim
 
 " Fugitive, awesome git wrapper
 source ~/.dotfiles/nvim/plugins/fugitive.vim
+
+" Adds Python related plugins
+source ~/.dotfiles/nvim/plugins/python/python.vim

@@ -7,6 +7,11 @@ nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 set incsearch
 set showmatch
 
+" Underline current line
+set cursorline
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
+
 " Put swap and backup files outside project dir to keep it clean
 set swapfile
 set dir=~/tmp

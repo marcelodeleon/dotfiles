@@ -64,8 +64,8 @@ set pastetoggle=<F3>
 " Paste from clipboard
 nmap <leader>p :put+<CR>
 
-" Make it obvious where 120 characters is
-set textwidth=120
+" Make it obvious where 110 characters is
+set textwidth=110
 " set formatoptions=cq
 set formatoptions=qrn1
 set wrapmargin=0

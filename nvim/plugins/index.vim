@@ -29,3 +29,6 @@ source ~/.dotfiles/nvim/plugins/fugitive.vim
 
 " Adds Python related plugins
 source ~/.dotfiles/nvim/plugins/python/python.vim
+
+" Async Linter
+source ~/.dotfiles/nvim/plugins/ale.vim

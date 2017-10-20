@@ -32,3 +32,6 @@ source ~/.dotfiles/nvim/plugins/python/python.vim
 
 " Async Linter
 source ~/.dotfiles/nvim/plugins/ale.vim
+
+" Javascript syntax highlighter
+Plug 'othree/yajs.vim'

@@ -22,10 +22,13 @@ set backupdir=~/tmp
 " This enables :compl-filename to give me proper relative filenames.
 set autochdir
 
-" Use 4 spaces for indentation
+" Use 4 spaces for indentation as default.
 set ts=4
 set et
 set sw=4
+
+" Use 2 spaces for indentation for Javascript
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " Show invisible characters
 " Shortcut to rapidly toggle `set list`

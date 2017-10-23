@@ -10,6 +10,9 @@ source ~/.dotfiles/nvim/plugins/theme.vim
 " Deals with surroundings
 Plug 'tpope/vim-surround'
 
+" Insert/delete quotes, parens and the likes in pairs.
+Plug 'jiangmiao/auto-pairs'
+
 " Project-wide, fuzzy filename search
 source ~/.dotfiles/nvim/plugins/ctrlp.vim
 

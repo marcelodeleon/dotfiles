@@ -10,6 +10,9 @@ source ~/.dotfiles/nvim/plugins/theme.vim
 " Deals with surroundings
 Plug 'tpope/vim-surround'
 
+" Pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+
 " Insert/delete quotes, parens and the likes in pairs.
 Plug 'jiangmiao/auto-pairs'
 

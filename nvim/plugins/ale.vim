@@ -5,7 +5,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_fixers = {
-\   'javascript': ['eslint', 'standard'],
+\   'javascript': ['eslint'],
 \}
 
 " Remove comments in the following lines to enable automatic formatting.

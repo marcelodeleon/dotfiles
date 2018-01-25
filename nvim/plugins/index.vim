@@ -41,3 +41,6 @@ source ~/.dotfiles/nvim/plugins/ale.vim
 
 " Javascript syntax highlighter
 Plug 'othree/yajs.vim'
+
+" Vim Wiki
+Plug 'vimwiki/vimwiki'

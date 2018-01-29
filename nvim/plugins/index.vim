@@ -48,3 +48,6 @@ Plug 'vimwiki/vimwiki'
 " Sugar for UNIX commands.
 " Specifically useful to rename open files in place.
 Plug 'tpope/vim-eunuch'
+
+" Allows to navigate vim and tmux panes as if they were the same.
+Plug 'christoomey/vim-tmux-navigator'

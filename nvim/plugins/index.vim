@@ -44,3 +44,7 @@ Plug 'othree/yajs.vim'
 
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
+
+" Sugar for UNIX commands.
+" Specifically useful to rename open files in place.
+Plug 'tpope/vim-eunuch'

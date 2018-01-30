@@ -51,3 +51,6 @@ Plug 'tpope/vim-eunuch'
 
 " Allows to navigate vim and tmux panes as if they were the same.
 Plug 'christoomey/vim-tmux-navigator'
+
+" Calendar for vim, it integrates with vimwiki.
+Plug 'git://github.com/mattn/calendar-vim'

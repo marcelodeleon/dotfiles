@@ -21,5 +21,8 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Add home folder to path, this is useful for vim 'go to file' feature.
+export PATH="$PATH:$HOME"
+
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"

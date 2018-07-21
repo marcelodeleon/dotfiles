@@ -32,7 +32,7 @@ endif
 
 " Use tern_for_vim.
 let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+let g:tern#arguments = ["--persistent", "--no-port-file"]
 
 let g:deoplete#sources#ternjs#docs = 1
 let g:deoplete#sources#ternjs#types = 1

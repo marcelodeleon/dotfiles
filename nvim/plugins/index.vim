@@ -40,7 +40,10 @@ source ~/.dotfiles/nvim/plugins/ale.vim
 source ~/.dotfiles/nvim/plugins/ultisnips.vim
 
 " Javascript syntax highlighter
-Plug 'othree/yajs.vim'
+source ~/.dotfiles/nvim/plugins/javascript-syntax-highlighting.vim
+
+" Expand CSS selectors into HTML or JSX
+source ~/.dotfiles/nvim/plugins/emmet.vim
 
 " Vim Wiki
 Plug 'vimwiki/vimwiki'

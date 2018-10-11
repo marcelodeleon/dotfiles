@@ -1,2 +1,2 @@
-Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'

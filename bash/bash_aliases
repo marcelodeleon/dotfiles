@@ -10,23 +10,6 @@ alias gx='gitx --all'
 alias gci='git ci -m '
 alias gp='git push -u origin master'
 
-# ls with list options showing hidden files
-alias l='ls -la'
-# Navigate home
-alias wh='cd ~'
-
-# First project aliases
-alias wf='cd ~/sandbox/first'
-
-# Alias for compgraf sandbox
-alias wcs='cd ~/ucu/compgraf/sandbox'
-
-# Quick alias to edit bash configuration
-alias ebc='vim ~/.bashrc ~/.bash_profile ~/.bash_aliases'
-
-# Quick alias to edit vim TODO file
-alias vt='vim -O ~/.dotfiles/nvim/nvim_config.todo ~/.dotfiles/nvim/nvim_setup_log.md'
-
 # Remap rm to use trash, safety net against being very sleepy
 alias rm=trash
 

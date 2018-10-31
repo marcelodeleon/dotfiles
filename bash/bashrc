@@ -1,9 +1,3 @@
-# Used to enable virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Defines the path to virtualenvs
-export WORKON_HOME=~/Envs
-
 # Defines user config folder
 export XDG_CONFIG_HOME=~/.config
 

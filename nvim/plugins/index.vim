@@ -1,5 +1,9 @@
+Plug 'metakirby5/codi.vim'
+
 " NERDTree sidebar
 source ~/.dotfiles/nvim/plugins/nerdtree.vim
+
+Plug 'jparise/vim-graphql'
 
 " vim-airline and color scheme config
 source ~/.dotfiles/nvim/plugins/theme.vim

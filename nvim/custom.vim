@@ -7,6 +7,9 @@ nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 set incsearch
 set showmatch
 
+" Enable mouse
+set mouse=a
+
 " Underline current line
 set cursorline
 hi clear CursorLine

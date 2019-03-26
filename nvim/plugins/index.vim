@@ -5,6 +5,11 @@ source ~/.dotfiles/nvim/plugins/nerdtree.vim
 
 Plug 'jparise/vim-graphql'
 
+" Text object for a line and entire file
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire'
+
 " vim-airline and color scheme config
 source ~/.dotfiles/nvim/plugins/theme.vim
 

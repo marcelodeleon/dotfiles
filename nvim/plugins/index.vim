@@ -61,6 +61,3 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Calendar for vim, it integrates with vimwiki.
 Plug 'git://github.com/mattn/calendar-vim'
-
-" Prettier
-source ~/.dotfiles/nvim/plugins/prettier.vim

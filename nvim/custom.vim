@@ -76,6 +76,8 @@ set colorcolumn=+1
 
 " Open vertical splits on the right
 set splitright
+" Open horizontal splits at the bottom
+set splitbelow
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>

@@ -3,6 +3,9 @@ Plug 'metakirby5/codi.vim'
 " NERDTree sidebar
 source ~/.dotfiles/nvim/plugins/nerdtree.vim
 
+" Makes :E to run as :Explore and don't collide with :Emmet
+command -nargs=* -complete=dir -bar -count -bang E :Explore<bang> <args>
+
 Plug 'jparise/vim-graphql'
 
 " Text object for a line and entire file

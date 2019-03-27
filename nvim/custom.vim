@@ -101,6 +101,12 @@ nnoremap <F4> :%s/^ \+//<CR>
 " Allows to copy from vim and paste in the system clipboard
 set clipboard=unnamed
 
+" Set hidden buffers, so we can navigate away without saving.
+set hidden
+
+" Expands path of the active buffer in commmand-line mode when typing '%%'
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " Quick file mappings
 noremap <Leader>s :update<CR> 
 noremap <Leader>w :q<CR> 

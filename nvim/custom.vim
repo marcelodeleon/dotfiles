@@ -10,6 +10,9 @@ set showmatch
 " Enable mouse
 set mouse=a
 
+" Make sure the current file and the working directory are in the path.
+set path+=.,,
+
 " Underline current line
 set cursorline
 hi clear CursorLine

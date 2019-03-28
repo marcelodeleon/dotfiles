@@ -1,5 +1,8 @@
 Plug 'metakirby5/codi.vim'
 
+" Enable matchit plugin
+runtime macros/matchit.vim
+
 " NERDTree sidebar
 source ~/.dotfiles/nvim/plugins/nerdtree.vim
 

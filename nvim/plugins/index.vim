@@ -1,3 +1,6 @@
+" It allows you to search the selected text using '*'
+Plug 'nelstrom/vim-visual-star-search'
+
 Plug 'metakirby5/codi.vim'
 
 " Enable matchit plugin

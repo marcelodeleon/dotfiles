@@ -7,6 +7,9 @@ nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 set incsearch
 set showmatch
 
+" Enables paragraph formatting with Unix 'par'
+set formatprg=par
+
 " Enable mouse
 set mouse=a
 

@@ -6,6 +6,9 @@ set hlsearch
 nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 set incsearch
 set showmatch
+" Make '&' trigger the last search keeping any flags passed.
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 " Enables paragraph formatting with Unix 'par'
 set formatprg=par

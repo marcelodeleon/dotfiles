@@ -1,7 +1,13 @@
+" Allows to load quickfix list results to args.
+Plug 'nelstrom/vim-qargs'
+
 " It allows you to search the selected text using '*'
 Plug 'nelstrom/vim-visual-star-search'
 
 Plug 'metakirby5/codi.vim'
+
+" Shows the CSS color inside vim
+Plug 'ap/vim-css-color'
 
 " Enable matchit plugin
 runtime macros/matchit.vim

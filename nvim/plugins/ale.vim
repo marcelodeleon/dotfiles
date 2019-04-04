@@ -6,11 +6,15 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_fixers = {
 \   'javascript': ['prettier-standard'],
+\   'vue': ['prettier'],
 \}
 
 let g:ale_linters = {
 \   'javascript': ['standard'],
+\   'vue': ['eslint', 'vls'],
 \}
+
+let g:ale_linter_aliases = {'vue': ['vue', 'javascript']}
 
 nmap <silent> <leader>af :ALEFix<cr>
 

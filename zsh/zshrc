@@ -93,3 +93,6 @@ eval $(/usr/libexec/path_helper -s)
 
 # Enable syntax highlighting for oh-my-zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Meteor configuration for Mongodb
+export MONGO_URL=mongodb://127.0.0.1:27017/meteor

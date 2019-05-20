@@ -54,6 +54,9 @@ source ~/.dotfiles/nvim/plugins/deoplete.vim
 " Fugitive, awesome git wrapper
 source ~/.dotfiles/nvim/plugins/fugitive.vim
 
+" Great plugin for text search.
+source ~/.dotfiles/nvim/plugins/ctrlsf.vim
+
 " Adds Python related plugins
 source ~/.dotfiles/nvim/plugins/python/python.vim
 

@@ -96,3 +96,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Meteor configuration for Mongodb
 export MONGO_URL=mongodb://127.0.0.1:27017/meteor
+
+# Use executables from local node_modules of a project.
+export NODE_MODULES_PATH=node_modules/.bin
+export PATH=$PATH:$NODE_MODULES_PATH

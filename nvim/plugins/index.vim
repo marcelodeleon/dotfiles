@@ -84,3 +84,5 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Calendar for vim, it integrates with vimwiki.
 Plug 'git://github.com/mattn/calendar-vim'
+
+source ~/.dotfiles/nvim/plugins/ack.vim

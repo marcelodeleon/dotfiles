@@ -83,3 +83,4 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'git://github.com/mattn/calendar-vim'
 
 source ~/.dotfiles/nvim/plugins/ack.vim
+source ~/.dotfiles/nvim/plugins/markdown.vim

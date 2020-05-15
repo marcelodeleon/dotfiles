@@ -12,9 +12,6 @@ Plug 'ap/vim-css-color'
 " Enable matchit plugin
 runtime macros/matchit.vim
 
-" NERDTree sidebar
-source ~/.dotfiles/nvim/plugins/nerdtree.vim
-
 " Makes :E to run as :Explore and don't collide with :Emmet
 command -nargs=* -complete=dir -bar -count -bang E :Explore<bang> <args>
 

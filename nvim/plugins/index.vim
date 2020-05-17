@@ -31,6 +31,9 @@ Plug 'tpope/vim-surround'
 " Pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
 
+" Use dot with plugin actions!
+Plug 'tpope/vim-repeat'
+
 " Insert/delete quotes, parens and the likes in pairs.
 Plug 'jiangmiao/auto-pairs'
 

@@ -27,6 +27,8 @@ Plug 'tpope/vim-commentary'
 " Async autocomplete plugin
 " source ~/.dotfiles/nvim/plugins/deoplete.vim
 
+source ~/.dotfiles/nvim/plugins/coc.vim
+
 " Fugitive, awesome git wrapper
 source ~/.dotfiles/nvim/plugins/fugitive.vim
 

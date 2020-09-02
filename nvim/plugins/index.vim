@@ -25,7 +25,7 @@ let g:airline_powerline_fonts = 1
 Plug 'tpope/vim-commentary'
 
 " Async autocomplete plugin
-source ~/.dotfiles/nvim/plugins/deoplete.vim
+" source ~/.dotfiles/nvim/plugins/deoplete.vim
 
 " Fugitive, awesome git wrapper
 source ~/.dotfiles/nvim/plugins/fugitive.vim

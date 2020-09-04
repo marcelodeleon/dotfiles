@@ -15,7 +15,7 @@ runtime macros/matchit.vim
 " Makes :E to run as :Explore and don't collide with :Emmet
 command -nargs=* -complete=dir -bar -count -bang E :Explore<bang> <args>
 
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 
 " Text object for a line and entire file
 Plug 'kana/vim-textobj-user'
@@ -48,8 +48,11 @@ let g:airline_powerline_fonts = 1
 " Comment stuff out
 Plug 'tpope/vim-commentary'
 
+" Disabling since I haven't been able to make it work properly...
 " Async autocomplete plugin
-source ~/.dotfiles/nvim/plugins/deoplete.vim
+" source ~/.dotfiles/nvim/plugins/deoplete.vim
+" Trying CoC for a change.
+source ~/.dotfiles/nvim/plugins/coc.vim
 
 " Fugitive, awesome git wrapper
 source ~/.dotfiles/nvim/plugins/fugitive.vim
@@ -58,7 +61,7 @@ source ~/.dotfiles/nvim/plugins/fugitive.vim
 source ~/.dotfiles/nvim/plugins/ctrlsf.vim
 
 " Adds Python related plugins
-source ~/.dotfiles/nvim/plugins/python/python.vim
+" source ~/.dotfiles/nvim/plugins/python/python.vim
 
 " Async Linter
 source ~/.dotfiles/nvim/plugins/ale.vim

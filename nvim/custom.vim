@@ -51,6 +51,9 @@ vnoremap . :normal .<CR>
 " Sources the current vimscript
 nnoremap <leader>sop :source %<cr>
 
+" Open netrw
+nnoremap <silent> <leader>e :Explore<cr>
+
 " Set Chrome as the default browser
 let g:netrw_browsex_viewer='google-chrome'
 

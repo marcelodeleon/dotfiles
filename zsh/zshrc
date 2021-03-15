@@ -34,3 +34,6 @@ antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-se
 antigen apply
 export NVM_DIR=~/.nvm
  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Add Homebrew sbin to PATH
+export PATH="/usr/local/sbin:$PATH"

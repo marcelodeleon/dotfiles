@@ -35,3 +35,8 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Loads bashrc.
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+
+# Loads pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

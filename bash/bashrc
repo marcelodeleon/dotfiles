@@ -1,10 +1,6 @@
 # Defines user config folder
 export XDG_CONFIG_HOME=~/.config
 
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
-
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 # Add bash aliases.
@@ -23,4 +19,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Override apple git with brew git.
 export PATH="/usr/local/bin:${PATH}"
-alias ic="ibmcloud"

@@ -1,34 +1,26 @@
-# Load Powerlevel9k theme config
-# if [ -f ~/.zsh_powerlevel9k_config ]; then . ~/.zsh_powerlevel9k_config; fi
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
 
-# Load antigen.
-source $(brew --prefix)/share/antigen/antigen.zsh
+# if the init script doesn't exist
+if ! zgen saved; then
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+  # specify plugins here
+  zgen oh-my-zsh
 
-# Spaceship theme.
-antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+  zgen oh-my-zsh plugins/z
+  zgen load denysdovhan/spaceship-prompt spaceship
+  zgen load zsh-users/zsh-syntax-highlighting
+  # zgen load zsh-users/zsh-history-substring-search.zsh
 
-# Powerlevel9k theme.
-# antigen theme bhilburn/powerlevel9k powerlevel9k
+  # generate the init script from plugins above
+  zgen save
+fi
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-# antigen bundle git
-# antigen bundle pip
-# antigen bundle lein
-# antigen bundle command-not-found
-# antigen bundle brew
-# antigen bundle common-aliases
-# antigen bundle compleat
-antigen bundle z
-antigen bundle zsh-users/zsh-syntax-highlighting
-# antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
-
-# Tell Antigen that you're done.
-antigen apply
+# Pay attention to the '--no-use' flag when
+# loading nvm. This cuts zsh loading time by a
+# big margin.
 export NVM_DIR=~/.nvm
- [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
 
 # Add Homebrew sbin to PATH
 export PATH="/usr/local/sbin:$PATH"
@@ -36,7 +28,15 @@ export PATH="/usr/local/sbin:$PATH"
 # Loads bashrc.
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
-# Loads pyenv
+# Lazy loads pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+pyenv() {
+    eval "$(command pyenv init -)"
+    pyenv "$@"
+}
+
+# Utility to profile zsh loading time
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}

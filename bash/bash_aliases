@@ -17,3 +17,11 @@ alias rm=trash
 alias nvim=~/nvim-osx64/bin/nvim
 alias vim=nvim
 alias vi=nvim
+
+# ls replacement
+alias l='exa --icons'
+alias ll='l -l --icons --git'
+alias lt='ll --tree'
+alias la='ll -a'
+alias lat='ll -a --tree'
+alias tree='l --git-ignore --icons --tree'

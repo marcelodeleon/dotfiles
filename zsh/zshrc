@@ -28,13 +28,6 @@ export PATH="/usr/local/sbin:$PATH"
 # Loads bashrc.
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
-# Lazy loads pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-pyenv() {
-    eval "$(command pyenv init -)"
-    pyenv "$@"
-}
-
 # Utility to profile zsh loading time
 timezsh() {
   shell=${1-$SHELL}

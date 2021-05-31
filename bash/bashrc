@@ -1,7 +1,9 @@
 # Defines user config folder
 export XDG_CONFIG_HOME=~/.config
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+# Used to load custom local behavior that shouldn't be exposed on Github
+# or kept under version control.
+[[ -s "$HOME/.localconf" ]] && source "$HOME/.localconf"
 
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
@@ -18,4 +20,4 @@ export PATH="$PATH:$HOME"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Override apple git with brew git.
-export PATH="/usr/local/bin:${PATH}"
+# export PATH="/usr/local/bin:${PATH}"

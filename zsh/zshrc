@@ -11,6 +11,8 @@ if ! zgen saved; then
   zgen load denysdovhan/spaceship-prompt spaceship
   zgen load zsh-users/zsh-syntax-highlighting
   # zgen load zsh-users/zsh-history-substring-search.zsh
+  # Load dracula pro theme
+  zgen oh-my-zsh themes/dracula-pro
 
   # generate the init script from plugins above
   zgen save

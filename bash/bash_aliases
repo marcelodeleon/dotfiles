@@ -14,7 +14,6 @@ alias gp='git push -u origin master'
 alias rm=trash
 
 # Remap vim and vi commands to always run neovim(nvim)
-alias nvim=~/nvim-osx64/bin/nvim
 alias vim=nvim
 alias vi=nvim
 
@@ -25,3 +24,5 @@ alias lt='ll --tree'
 alias la='ll -a'
 alias lat='ll -a --tree'
 alias tree='l --git-ignore --icons --tree'
+
+alias kn='kubectl get nodes --output="custom-columns=NAME:.metadata.name,ID:.spec.providerID,TYPE:.metadata.labels.beta\.kubernetes\.io\/instance-type,GPU:.status.allocatable.nvidia\.com/gpu,ROLE:.metadata.labels.role,LIFECYCLE:.metadata.labels.spotinst\.io\/node-lifecycle,CREATED:.metadata.creationTimestamp" --sort-by=".metadata.labels.role"'

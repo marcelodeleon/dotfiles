@@ -8,7 +8,7 @@ cd "$DOTFILES_DIR"
 HOME_PACKAGES=(zshrc tmux)
 
 # Packages that stow to ~/.config (via .stowrc default)
-CONFIG_PACKAGES=(ghostty)
+CONFIG_PACKAGES=(ghostty starship)
 
 echo "Setting up dotfiles from $DOTFILES_DIR"
 

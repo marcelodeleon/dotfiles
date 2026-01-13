@@ -1,40 +1,51 @@
-# load zgen
-source "${HOME}/.zgen/zgen.zsh"
+export LANG=en_US.UTF-8
 
-# Load aliases
-[[ -f ~/aliases.zsh ]] && source ~/aliases.zsh
+# Fix terminal dimensions for tmux/multiplexers
+export COLUMNS=$(tput cols)
+export LINES=$(tput lines)
 
-# if the init script doesn't exist
-if ! zgen saved; then
-
-  # specify plugins here
-  zgen oh-my-zsh
-
-  zgen oh-my-zsh plugins/z
-  zgen load denysdovhan/spaceship-prompt spaceship
-  zgen load zsh-users/zsh-syntax-highlighting
-  # zgen load zsh-users/zsh-history-substring-search.zsh
-  # Load dracula pro theme
-  zgen oh-my-zsh themes/dracula-pro
-
-  # generate the init script from plugins above
-  zgen save
+# Preferred editor for local and remote sessions
+# Use full path for EDITOR since aliases don't work in non-interactive shells (e.g., Claude Code)
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+  export VISUAL='vim'
+else
+  export EDITOR='/usr/local/bin/nvim-macos-arm64/bin/nvim'
+  export VISUAL="$EDITOR"
 fi
 
-# Pay attention to the '--no-use' flag when
-# loading nvm. This cuts zsh loading time by a
-# big margin.
-export NVM_DIR=~/.nvm
- [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
+# source antidote
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
-# Add Homebrew sbin to PATH
-export PATH="/usr/local/sbin:$PATH"
+# initialize completions before loading plugins
+autoload -Uz compinit
+compinit
 
-# Loads bashrc.
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+antidote load
 
-# Utility to profile zsh loading time
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
+# --- modular config loader (load AFTER plugins) ---
+for f in ~/.zshrc.d/*.zsh; do
+  [ -r "$f" ] && source "$f"
+done
+
+export XDG_CONFIG_HOME="$HOME/.config"
+
+alias nvim=/usr/local/bin/nvim-macos-arm64/bin/nvim
+
+eval "$(zoxide init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+alias ls=eza
+
+# Needed for llm-proxy-keys
+export PATH="$HOME/.local/bin:$PATH"
+
+# nvm config
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+eval "$(starship init zsh)"

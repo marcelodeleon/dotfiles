@@ -1,0 +1,13 @@
+# Core zsh improvements
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+
+# Fast directory jumping (already using zoxide, but this enhances completion)
+ajeetdsouza/zoxide
+
+# Git prompt & helper functions (works with Starship too)
+ohmyzsh/ohmyzsh path:plugins/git
+
+# History substring search - better than zsh-autocomplete
+zsh-users/zsh-history-substring-search

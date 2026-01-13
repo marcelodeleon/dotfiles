@@ -1,0 +1,4 @@
+theme = "dracula-pro"
+term = "xterm-256color"
+keybind = global:cmd+backquote=toggle_quick_terminal
+keybind = global:ctrl+f=text:~/.local/bin/tmux-sessionizer\x0d

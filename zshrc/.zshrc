@@ -1,6 +1,9 @@
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
+# Load aliases
+[[ -f ~/aliases.zsh ]] && source ~/aliases.zsh
+
 # if the init script doesn't exist
 if ! zgen saved; then
 

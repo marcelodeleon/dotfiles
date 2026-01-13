@@ -5,10 +5,10 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Packages that stow to ~ (home)
-HOME_PACKAGES=(zshrc)
+HOME_PACKAGES=(zshrc tmux)
 
 # Packages that stow to ~/.config (via .stowrc default)
-CONFIG_PACKAGES=(ghostty tmux)
+CONFIG_PACKAGES=(ghostty)
 
 echo "Setting up dotfiles from $DOTFILES_DIR"
 

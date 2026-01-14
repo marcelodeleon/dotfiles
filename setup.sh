@@ -5,7 +5,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DOTFILES_DIR"
 
 # Packages that stow to ~ (home)
-HOME_PACKAGES=(zshrc tmux)
+HOME_PACKAGES=(zshrc tmux aerospace)
 
 # Packages that stow to ~/.config (via .stowrc default)
 CONFIG_PACKAGES=(ghostty starship)

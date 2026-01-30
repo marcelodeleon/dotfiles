@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# Get current Spotify track on macOS with scrolling for long names
+
+STATE_FILE="$HOME/.cache/spotify-scroll-state"
+DISPLAY_WIDTH=30
+SCROLL_SPEED=2  # chars per update
+
+# Ensure cache dir exists
+mkdir -p "$HOME/.cache"
+
+# Check if Spotify is running
+if ! pgrep -x "Spotify" > /dev/null; then
+    rm -f "$STATE_FILE"
+    exit 0
+fi
+
+# Get current track info
+artist=$(osascript -e 'tell application "Spotify" to artist of current track' 2>/dev/null)
+track=$(osascript -e 'tell application "Spotify" to name of current track' 2>/dev/null)
+
+# Exit if no track playing
+if [[ -z "$track" ]]; then
+    rm -f "$STATE_FILE"
+    exit 0
+fi
+
+# Strip extra details (remaster info, etc.) - keep only text before first " - "
+track="${track%% - *}"
+
+# Calculate fixed prefix: "🎵 Artist - "
+fixed_prefix="🎵 $artist - "
+fixed_length=${#fixed_prefix}
+
+# Calculate available width for scrolling song name
+available_width=$((DISPLAY_WIDTH - fixed_length))
+
+# If song name fits in available space, no scrolling needed
+if [[ ${#track} -le $available_width ]]; then
+    echo "${fixed_prefix}${track}"
+    rm -f "$STATE_FILE"
+    exit 0
+fi
+
+# Song is too long - need to scroll
+# Read previous state (track:position)
+if [[ -f "$STATE_FILE" ]]; then
+    IFS=: read -r prev_track prev_pos < "$STATE_FILE"
+else
+    prev_track=""
+    prev_pos=0
+fi
+
+# Reset position if track changed
+if [[ "$prev_track" != "$track" ]]; then
+    prev_pos=0
+fi
+
+# Add padding for smooth loop (song + spaces + song)
+padded_track="$track    $track"
+
+# Calculate window to display
+window_start=$prev_pos
+visible_song="${padded_track:$window_start:$available_width}"
+
+# Calculate next position
+next_pos=$((prev_pos + SCROLL_SPEED))
+if [[ $next_pos -ge ${#track} ]]; then
+    next_pos=0
+fi
+
+# Save state for next invocation
+echo "$track:$next_pos" > "$STATE_FILE"
+
+# Output result with fixed prefix + scrolling song
+echo "${fixed_prefix}${visible_song}"

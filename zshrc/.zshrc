@@ -30,6 +30,7 @@ for f in ~/.zshrc.d/*.zsh; do
 done
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export NODE_EXTRA_CA_CERTS="$HOME/certs/combined-ca-bundle.pem"
 
 alias nvim=/usr/local/bin/nvim-macos-arm64/bin/nvim
 
@@ -50,3 +51,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(starship init zsh)"
 export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+
+# payhub-knowledge-base-setup
+alias claude-kb='/Users/marcelodeleon/projects/payment-hub-knowledge-base/setup/claude-kb-launcher.sh'

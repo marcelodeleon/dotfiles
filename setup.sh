@@ -10,6 +10,9 @@ HOME_PACKAGES=(zshrc tmux aerospace)
 # Packages that stow to ~/.config (via .stowrc default)
 CONFIG_PACKAGES=(ghostty starship)
 
+# Packages that stow to ~/.pi/agent
+PI_PACKAGES=(pi-agent)
+
 echo "Setting up dotfiles from $DOTFILES_DIR"
 
 # Stow home-targeted packages
@@ -22,6 +25,13 @@ done
 for pkg in "${CONFIG_PACKAGES[@]}"; do
   echo "Stowing $pkg -> ~/.config"
   stow "$pkg"
+done
+
+# Stow pi packages
+for pkg in "${PI_PACKAGES[@]}"; do
+  echo "Stowing $pkg -> ~/.pi/agent"
+  mkdir -p ~/.pi/agent
+  stow -t ~/.pi/agent "$pkg"
 done
 
 echo "Done!"

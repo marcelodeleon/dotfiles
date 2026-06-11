@@ -1,6 +1,16 @@
 {
+  "skills": [
+    "~/.claude/skills"
+  ],
   "lastChangelogVersion": "0.79.0",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.4",
-  "theme": "dracula-pro"
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-4-6",
+  "theme": "dracula-pro",
+  "hideThinkingBlock": true,
+  "enabledModels": [
+    "anthropic/claude-opus-4-6",
+    "anthropic/claude-sonnet-4-6",
+    "openai-codex/gpt-5.4"
+  ],
+  "defaultThinkingLevel": "medium"
 }

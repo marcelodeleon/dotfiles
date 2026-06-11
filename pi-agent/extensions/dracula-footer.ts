@@ -61,7 +61,7 @@ export default function (pi: ExtensionAPI) {
           const majorSep = theme.fg("borderAccent", "  ::  ");
 
           const identityParts = [
-            theme.fg("accent", "π pi"),
+            theme.fg("accent", "π"),
             theme.fg("customMessageLabel", dirName),
             gitBranch ? theme.fg("mdLink", ` ${gitBranch}`) : undefined,
             sessionName ? theme.fg("thinkingText", sessionName) : undefined,

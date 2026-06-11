@@ -1,0 +1,4 @@
+{
+  "app.model.select": ["ctrl+t"],
+  "app.thinking.toggle": ["ctrl+shift+t"]
+}

@@ -6,8 +6,10 @@ import { truncateToWidth, visibleWidth } from "@earendil-works/pi-tui";
 
 function fmtInt(n: number): string {
   if (n < 1000) return `${n}`;
-  if (n < 1_000_000) return `${(n / 1000).toFixed(1)}k`;
-  return `${(n / 1_000_000).toFixed(1)}m`;
+  if (n < 10_000) return `${(n / 1000).toFixed(1)}k`;
+  if (n < 1_000_000) return `${Math.round(n / 1000)}k`;
+  if (n < 10_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  return `${Math.round(n / 1_000_000)}M`;
 }
 
 export default function (pi: ExtensionAPI) {
@@ -58,38 +60,35 @@ export default function (pi: ExtensionAPI) {
           const dirName = cwd === home ? "~" : path.basename(cwd);
 
           const sep = theme.fg("muted", "•");
-          const majorSep = theme.fg("borderAccent", "  ::  ");
 
+          // === Line 1: Identity (path, branch, session) ===
           const identityParts = [
-            theme.fg("accent", "π"),
+            sessionName ? theme.fg("thinkingText", sessionName) : theme.fg("accent", "π"),
             theme.fg("customMessageLabel", dirName),
             gitBranch ? theme.fg("mdLink", ` ${gitBranch}`) : undefined,
-            sessionName ? theme.fg("thinkingText", sessionName) : undefined,
           ].filter(Boolean) as string[];
 
+          const line1 = `  ${identityParts.join(` ${sep} `)}`;
+
+          // === Line 2: Metrics (left) | Cache info (right) ===
           const modelBlock = [
             theme.fg("mdLink", "🤖"),
             theme.fg("mdHeading", model),
             theme.fg("thinkingText", thinkingLevel),
           ].join(" ");
 
-          const statsParts = [
+          const metricsLeft = [
             modelBlock,
             usage ? theme.fg("text", `${fmtInt(usage.tokens)} ctx`) : undefined,
             usage?.percent != null ? theme.fg("warning", `${Math.round(usage.percent)}%`) : undefined,
             theme.fg("success", `↑${fmtInt(input)}`),
             theme.fg("thinkingHigh", `↓${fmtInt(output)}`),
             theme.fg("bashMode", `$${cost.toFixed(cost >= 10 ? 2 : 3)}`),
+            ...(statuses.length ? statuses : []),
           ].filter(Boolean) as string[];
 
-          const statusParts = statuses.length ? statuses : [];
-          const sections = [
-            identityParts.join(` ${sep} `),
-            statsParts.join(` ${sep} `),
-            statusParts.length ? statusParts.join(` ${sep} `) : undefined,
-          ].filter(Boolean) as string[];
+          const left2 = `  ${metricsLeft.join(` ${sep} `)}`;
 
-          const left = `  ${sections.join(majorSep)}`;
           const cacheColor = "syntaxComment" as const;
           const cacheParts = [
             cacheRead > 0 ? theme.fg(cacheColor, `R${fmtInt(cacheRead)}`) : undefined,
@@ -98,29 +97,33 @@ export default function (pi: ExtensionAPI) {
               ? theme.fg(cacheColor, `CH${latestCacheHitRate.toFixed(1)}%`)
               : undefined,
           ].filter(Boolean) as string[];
-          const right = cacheParts.length ? cacheParts.join(` ${sep} `) : null;
+          const right2 = cacheParts.length ? cacheParts.join(` ${sep} `) : null;
 
-          if (!right) {
-            return [truncateToWidth(left, width), ""];
+          // Compose line 2 with left/right alignment
+          let line2: string;
+          if (!right2) {
+            line2 = truncateToWidth(left2, width);
+          } else {
+            const leftWidth = visibleWidth(left2);
+            const rightWidth = visibleWidth(right2);
+            const minGap = 2;
+
+            if (leftWidth + minGap + rightWidth <= width) {
+              line2 = [left2, " ".repeat(width - leftWidth - rightWidth), right2].join("");
+            } else {
+              const availableLeft = Math.max(0, width - rightWidth - minGap);
+              if (availableLeft > 0) {
+                const truncatedLeft = truncateToWidth(left2, availableLeft);
+                const truncatedLeftWidth = visibleWidth(truncatedLeft);
+                const gap = " ".repeat(Math.max(minGap, width - truncatedLeftWidth - rightWidth));
+                line2 = [truncatedLeft, gap, right2].join("");
+              } else {
+                line2 = truncateToWidth(right2, width);
+              }
+            }
           }
 
-          const leftWidth = visibleWidth(left);
-          const rightWidth = visibleWidth(right);
-          const minGap = 2;
-
-          if (leftWidth + minGap + rightWidth <= width) {
-            return [[left, " ".repeat(width - leftWidth - rightWidth), right].join(""), ""];
-          }
-
-          const availableLeft = Math.max(0, width - rightWidth - minGap);
-          if (availableLeft > 0) {
-            const truncatedLeft = truncateToWidth(left, availableLeft);
-            const truncatedLeftWidth = visibleWidth(truncatedLeft);
-            const gap = " ".repeat(Math.max(minGap, width - truncatedLeftWidth - rightWidth));
-            return [[truncatedLeft, gap, right].join(""), ""];
-          }
-
-          return [truncateToWidth(right, width), ""];
+          return [truncateToWidth(line1, width), line2, ""];
         },
       };
     });

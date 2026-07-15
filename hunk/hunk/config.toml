@@ -1,0 +1,31 @@
+# Hunk — review-first terminal diff viewer (https://github.com/modem-dev/hunk)
+# Managed via GNU Stow: dotfiles/hunk/hunk/config.toml -> ~/.config/hunk/config.toml
+#
+# Dracula Pro palette sourced from this repo's own definitions (single source of truth):
+#   - pi-agent/themes/dracula-pro.json
+#   - ghostty/themes/dracula-pro
+# Hunk has no built-in Dracula Pro, so we inherit a dark base and override key colors.
+
+theme = "custom"
+mode = "auto"          # auto | split | stack — responsive layout
+vcs = "git"
+line_numbers = true
+wrap_lines = false
+menu_bar = true
+watch = false
+agent_notes = true     # show inline agent/AI annotations by default (review-first workflow)
+prompt_save_view_preferences = true
+
+[custom_theme]
+base = "catppuccin-mocha"   # closest dark-purple built-in; fills any color we don't override
+label = "Dracula Pro"
+accent = "#9580FF"          # purple  (Dracula Pro accent)
+panel = "#2E2B3B"           # bglight (panel / sidebar surface)
+noteBorder = "#FF80BF"      # pink    (agent note border — pops against purple accent)
+
+[custom_theme.syntax]
+keyword = "#FF80BF"   # pink
+string = "#FFFF80"    # yellow
+comment = "#7970A9"   # comment
+operator = "#FF80BF"  # pink
+variable = "#F8F8F2"  # fg

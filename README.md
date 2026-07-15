@@ -7,6 +7,8 @@ Personal configurations managed with [GNU Stow](https://www.gnu.org/software/sto
 - **zshrc** - Zsh config with antidote, starship, and modular `.zshrc.d/`
 - **ghostty** - Ghostty terminal emulator config
 - **tmux** - Tmux config with plugins
+- **git** - Global `.gitconfig` (aliases, work include). `~/.gitconfig-work` stays outside the repo.
+- **hunk** - Config for the [hunk](https://github.com/modem-dev/hunk) terminal diff viewer (Dracula Pro theme)
 - **pi-agent** - Pi settings, themes, and extensions
 - **scripts** - Utility scripts (tmux-sessionizer)
 
@@ -26,8 +28,8 @@ cd ~/dotfiles
 ## How It Works
 
 Uses GNU Stow with three targets:
-- `zshrc`, `tmux`, `aerospace` → `~`
-- `ghostty`, `starship` → `~/.config` (XDG config directory)
+- `zshrc`, `tmux`, `aerospace`, `git` → `~`
+- `ghostty`, `starship`, `hunk` → `~/.config` (XDG config directory)
 - `pi-agent` → `~/.pi/agent`
 
 The `.stowrc` file sets `~/.config` as the default target.

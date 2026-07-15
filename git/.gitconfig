@@ -1,0 +1,9 @@
+[user]
+	email = mdeleoncosentino@gmail.com
+	name = Marcelo de Leon
+[includeIf "gitdir:~/projects/"]
+	path = /Users/marcelodeleon/.gitconfig-work
+[alias]
+	review = !hunk diff
+	review-staged = !hunk diff --staged
+	rshow = !hunk show

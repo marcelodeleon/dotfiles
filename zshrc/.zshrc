@@ -54,3 +54,28 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 # payhub-knowledge-base-setup
 alias claude-kb='/Users/marcelodeleon/projects/payment-hub-knowledge-base/setup/claude-kb-launcher.sh'
+
+# pi_kb (personal, not repo-managed): start a pi session at the KB repo root.
+# cwd = KB root, so pi auto-loads the KB's CLAUDE.md. Also loads the KB skills.
+# No MCP — dev skills have CLI alternatives. Subshell keeps caller's cwd intact.
+pi_kb() {
+  local kb="$HOME/projects/payment-hub-knowledge-base"
+  # Best-effort KB auto-update: only fast-forward when on main + clean + behind.
+  if [ -d "$kb/.git" ]; then
+    git -C "$kb" fetch --quiet origin main 2>/dev/null || true
+    local branch behind
+    branch=$(git -C "$kb" symbolic-ref --short HEAD 2>/dev/null)
+    behind=$(git -C "$kb" rev-list --count HEAD..origin/main 2>/dev/null || echo 0)
+    if [ "$branch" = "main" ] && [ "$behind" -gt 0 ]; then
+      if git -C "$kb" diff-index --quiet HEAD -- 2>/dev/null \
+         && git -C "$kb" merge --ff-only --quiet origin/main 2>/dev/null; then
+        echo "[kb] fast-forwarded main by $behind commit(s)" >&2
+      else
+        echo "[kb] main is $behind commit(s) behind origin/main — not pulling (dirty or non-ff)" >&2
+      fi
+    elif [ -n "$branch" ] && [ "$branch" != "main" ]; then
+      echo "[kb] on '$branch' (not main) — KB auto-update skipped" >&2
+    fi
+  fi
+  ( cd "$kb" && pi --skill "$kb/.claude/skills" "$@" )
+}

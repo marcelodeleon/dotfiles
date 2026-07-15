@@ -2,3 +2,6 @@ nvim/nvim_config.todo
 nvim/nvim_setup_log.md
 *swp
 *swo
+
+# Extension dependencies — reproducible from package.json + package-lock.json
+node_modules/

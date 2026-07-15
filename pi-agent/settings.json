@@ -2,15 +2,20 @@
   "skills": [
     "~/.claude/skills"
   ],
-  "lastChangelogVersion": "0.79.0",
+  "lastChangelogVersion": "0.80.6",
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-6",
+  "defaultModel": "claude-opus-4-8",
   "theme": "dracula-pro",
   "hideThinkingBlock": true,
   "enabledModels": [
-    "anthropic/claude-opus-4-6",
-    "anthropic/claude-sonnet-4-6",
-    "openai-codex/gpt-5.4"
+    "openai-codex/gpt-5.4",
+    "anthropic/claude-opus-4-8",
+    "anthropic/claude-sonnet-5"
   ],
-  "defaultThinkingLevel": "medium"
+  "defaultThinkingLevel": "medium",
+  "enableSkillCommands": true,
+  "packages": [
+    "npm:@tintinweb/pi-tasks",
+    "npm:pi-subagents"
+  ]
 }

@@ -1,0 +1,7 @@
+{
+  "name": "token-usage",
+  "private": true,
+  "dependencies": {
+    "js-tiktoken": "^1.0.15"
+  }
+}

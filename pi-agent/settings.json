@@ -4,11 +4,12 @@
   ],
   "lastChangelogVersion": "0.80.6",
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-opus-4-8",
+  "defaultModel": "claude-sonnet-5",
   "theme": "dracula-pro",
   "hideThinkingBlock": true,
   "enabledModels": [
-    "openai-codex/gpt-5.4",
+    "openai-codex/gpt-5.6-sol",
+    "openai-codex/gpt-5.6-terra",
     "anthropic/claude-opus-4-8",
     "anthropic/claude-sonnet-5"
   ],

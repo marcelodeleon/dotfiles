@@ -207,3 +207,9 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+# Float JetBrains IDEs (IntelliJ IDEA) — their modal dialogs (Open Project,
+# license, settings) don't cooperate with tiling and become unclickable.
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij.ce'
+run = 'layout floating'

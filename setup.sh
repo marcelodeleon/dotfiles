@@ -8,7 +8,7 @@ cd "$DOTFILES_DIR"
 HOME_PACKAGES=(zshrc tmux aerospace git)
 
 # Packages that stow to ~/.config (via .stowrc default)
-CONFIG_PACKAGES=(ghostty starship hunk)
+CONFIG_PACKAGES=(ghostty starship)
 
 # Packages that stow to ~/.pi/agent
 PI_PACKAGES=(pi-agent)

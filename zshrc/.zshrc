@@ -30,6 +30,9 @@ export NVM_DIR=~/.nvm
 # Add Homebrew sbin to PATH
 export PATH="/usr/local/sbin:$PATH"
 
+# Add nvim to PATH
+export PATH="/usr/local/bin/nvim/bin:$PATH"
+
 # Loads bashrc.
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 

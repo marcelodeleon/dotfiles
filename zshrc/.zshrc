@@ -24,17 +24,17 @@ fi
 # Pay attention to the '--no-use' flag when
 # loading nvm. This cuts zsh loading time by a
 # big margin.
-export NVM_DIR=~/.nvm
- [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
+export NVM_DIR="$HOME/.nvm"
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh" --no-use
+  nvm use default --silent >/dev/null 2>&1
+fi
 
 # Add Homebrew sbin to PATH
 export PATH="/usr/local/sbin:$PATH"
 
 # Add nvim to PATH
 export PATH="/usr/local/bin/nvim/bin:$PATH"
-
-# Loads bashrc.
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
 # Utility to profile zsh loading time
 timezsh() {

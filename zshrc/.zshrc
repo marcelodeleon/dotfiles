@@ -21,13 +21,12 @@ if ! zgen saved; then
   zgen save
 fi
 
-# Pay attention to the '--no-use' flag when
-# loading nvm. This cuts zsh loading time by a
-# big margin.
+# Load nvm without its implicit version lookup, then activate the default.
+# --delete-prefix clears stale npm prefix settings that conflict with nvm.
 export NVM_DIR="$HOME/.nvm"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
   . "$NVM_DIR/nvm.sh" --no-use
-  nvm use default --silent >/dev/null 2>&1
+  nvm use --delete-prefix default --silent
 fi
 
 # Add Homebrew sbin to PATH

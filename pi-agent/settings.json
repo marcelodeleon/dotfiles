@@ -6,7 +6,9 @@
   "defaultProvider": "openai",
   "defaultModel": "gpt-5.6-terra",
   "theme": "dracula-pro",
+  "tuiMode": "regular",
   "hideThinkingBlock": true,
+  "externalEditor": "/usr/local/bin/nvim/bin/nvim",
   "enabledModels": [
     "gpt-5.6-sol",
     "gpt-5.6-terra",

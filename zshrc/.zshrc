@@ -33,6 +33,11 @@ fi
 # Add Homebrew sbin to PATH
 export PATH="/usr/local/sbin:$PATH"
 
+# Load Firecrawl API key from the macOS login Keychain for interactive shells.
+if [[ -o interactive ]]; then
+  export FIRECRAWL_API_KEY="$(security find-generic-password -s "firecrawl-api-key" -w 2>/dev/null)"
+fi
+
 # Add nvim to PATH
 export PATH="/usr/local/bin/nvim/bin:$PATH"
 

@@ -3,3 +3,5 @@
 	name = Marcelo de Leon
 [includeIf "gitdir:~/projects/"]
 	path = /Users/marcelodeleon/.gitconfig-work
+[init]
+	defaultBranch = main

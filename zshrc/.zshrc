@@ -29,8 +29,16 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
   nvm use --delete-prefix default --silent
 fi
 
+# Add user-installed command-line tools (including leaf) to PATH.
+export PATH="$HOME/.local/bin:$PATH"
+
 # Add Homebrew sbin to PATH
 export PATH="/usr/local/sbin:$PATH"
+
+# Set up fzf key bindings and fuzzy completion
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
 
 # Load Firecrawl API key from the macOS login Keychain for interactive shells.
 if [[ -o interactive ]]; then
